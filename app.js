@@ -24,7 +24,7 @@ app.get("/results", function (req, res) {
 });
 
 // SERVER
-var PORT_NUM = 3000;
+var PORT_NUM = process.env.PORT || 3000;
 var SERVER_START_MSG = "*Server is up and running on port " + PORT_NUM + "!*";
 
 app.listen(PORT_NUM, function () {
