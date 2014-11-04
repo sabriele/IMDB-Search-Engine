@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Movie Search</title>
+		<link href="/semantic.min.css" rel="stylesheet" type="text/css">
+		<link href="/search.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="ui center aligned fluid container">
+			<div class="ui huge header">
+				<a href="/"> Movie Search App</a>
+			</div>
+			<div class="ui two column divided grid">
+				<div class="row">
+					<div class="column">
+						<div class="ui center aligned container">
+							<div class="ui basic segment">
+								<div class="ui sub header">
+									Node.js-based<br>
+									Search App
+								</div>
+								<form action="/results" method="GET">
+									<div class="ui massive left icon action input">
+										<i class="search icon"></i>
+										<input type="text" name="search" placeholder="Search movie titles...">
+										<button type="submit" class="ui massive blue submit button">Search</button>
+									</div>
+									<div>
+										<% if (typeof data["Search"] === "undefined") { %>
+										<br>
+										<em>Please enter a valid search term.</em>
+										<% } else { %>
+										<% data["Search"].forEach(function (movie) { %>
+										<div class="ui attached segment">
+											<h2><%= movie["Title"] %></h2>
+										</div>
+										<% }) %>
+										<% } %>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui center aligned container" style="padding-top: 13px">
+							<h1 class="ui sub header">
+								Semantic UI<br>
+								Built-in Search Module
+							</h1>
+							<div class="ui fluid massive search">
+								<div class="ui icon input">
+									<input class="prompt" type="text" placeholder="Search movie titles...">
+									<i class="search icon"></i>
+								</div>
+								<div class="results"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="/semantic.min.js"></script>
+		<script>
+			$('.ui.search').search({
+				apiSettings: {
+					url: 'http://www.omdbapi.com/?s={query}'
+				},
+				fields: {
+					results: 'Search',
+					title: 'Title',
+				}
+			});
+		</script>
+	</body>
+
+</html>

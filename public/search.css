@@ -1,0 +1,26 @@
+body {
+	padding-top: 70px;
+}
+
+.ui.attached.segment {
+	width: 65%;
+	margin: auto;
+}
+
+.ui.fluid.massive.search > .results {
+	width: 45%;
+	margin: auto;
+}
+
+.ui.search >.results {
+	position: relative;
+}
+
+.ui.huge.header {
+	font-size: 5em;
+}
+
+.ui.sub.header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
