@@ -35,7 +35,7 @@
 					<div class="column">
 						<div class="ui center aligned container" style="padding-top: 13px">
 							<h1 class="ui sub header">
-								Semantic UI<br>
+								Semantic UI <br>
 								Built-in Search Module
 							</h1>
 							<div class="ui fluid massive search">
@@ -53,17 +53,8 @@
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="/semantic.min.js"></script>
-		<script>
-			$('.ui.search').search({
-				apiSettings: {
-					url: 'http://www.omdbapi.com/?s={query}&apikey=thewdb'
-				},
-				fields: {
-					results: 'Search',
-					title: 'Title',
-				}
-			});
-		</script>
+		<script src="/api.js"></script>
+
 	</body>
 
 </html>
